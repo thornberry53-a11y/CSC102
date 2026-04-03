@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- this now matches your math.js file in the folder -->
+    <script src="math.js"></script> 
+    <title>Golf Ball Challenge</title>
+</head>
+<body style="text-align: center; background-color: lightblue; font-family: sans-serif;">
+
+    <h1>Golf Ball Sum Challenge</h1>
+    <p>Try to get a sum of 7 or 21 to win!</p>
+
+    <!-- we use a regular button to stop the page from refreshing -->
+    <form>
+        <label>Player Name:</label>
+        <input type="text" id="playerName">
+        <br><br>
+        <!-- this calls the playGolf function in your math.js file -->
+        <button type="button" onclick="playGolf()">Play Golf</button>
+    </form>
+
+    <br>
+    <!-- these show my game results -->
+    <p id="golfballs">Golf balls will be displayed here</p>
+    <div id="result">Result will be displayed here</div>
+    <div id="greetingArea"></div>
+
+</body>
+</html>
