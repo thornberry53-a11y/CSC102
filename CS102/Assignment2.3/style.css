@@ -1,0 +1,23 @@
+/* this part changes the whole page background */
+body {
+    background-color: greenyellow; 
+    color: white;  
+}
+
+/* styling the first button by its id */
+#pop 
+{
+    background-color: lightblue; 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+/* styling the other three buttons together */
+#replace, #reload, #new
+{
+    background-color: lightgreen;
+    color: blueviolet; 
+    padding: 10px; 
+    margin-left: 5px; 
+    border-radius: 5px; 
+}

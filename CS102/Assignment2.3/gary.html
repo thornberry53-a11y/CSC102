@@ -1,0 +1,54 @@
+<!-- Declares the document type as HTML5 -->
+<!DOCTYPE html>
+<!-- Opens the html tag and sets language to English -->
+<html lang="en">
+<!-- Head section contains metadata and title -->
+<head>
+    <!-- Sets the character encoding for the page -->
+    <meta charset="UTF-8">
+    <!-- Sets the title that appears in the browser tab -->
+    <title>Monster Arena: The Final Stand</title>
+    <!-- Links to your external CSS file for styling -->
+    <link rel="stylesheet" href="main.css">
+<!-- Closes the head section -->
+</head>
+<!-- Body section contains the visible content -->
+<body>
+    <!-- Main heading for the game -->
+    <h1 id="main-title">Monster Arena</h1>
+    <!-- Container to show the Monster's current health -->
+    <div id="hp-container">
+        <!-- Text for health label -->
+        <p>Monster Health: <!-- Span where JS will inject the HP number -->
+        <span id="hp-number">100</span></p>
+    </div>
+
+    <!-- Requirement: Form with submit for all user input -->
+    <!-- Requirement: Function called via onsubmit (No ActionListeners) -->
+    <form id="attack-form" onsubmit="playRound(event)">
+        <!-- Label for the hero name input -->
+        <label for="hero-name">Hero Name:</label>
+        <!-- Text input for the player to enter their name -->
+        <input type="text" id="hero-name" placeholder="Enter your name" required>
+        
+        <br><br><!-- Line breaks for spacing -->
+
+        <!-- The submit button that triggers the game logic -->
+        <button type="submit">Execute Attack!</button>
+    </form>
+
+    <!-- Requirement: Section for results using .innerHTML -->
+    <div id="battle-log">
+        <!-- Default text before the game starts -->
+        <p>Enter your name and attack to begin!</p>
+    </div>
+
+    <!-- Requirement: Section for the secondary function's output -->
+    <div id="status-update"></div>
+
+    <!-- Requirement: Link the separate .js file -->
+    <script src="Code.js"></script>
+<!-- Closes the body tag -->
+</body>
+<!-- Closes the html tag -->
+</html>
