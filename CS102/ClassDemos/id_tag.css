@@ -1,0 +1,35 @@
+/* Overall background style for the page */
+body {
+    /* Set to cover so the gradient fills the entire window */
+    background-size: cover;
+    background-image: radial-gradient(blue, red);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* This part sets the basic look and size for all buttons */
+button {
+    background-color: #4caf50;
+    /* Defining a solid 12px border to make the outline visible */
+    border: 12px solid black;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Changing only the background for each specific button ID */
+#Button1 {
+    background-color: red;
+}
+
+#Button2 {
+    background-color: blue;
+}
+
+#Button3 {
+    background-color: green;
+}

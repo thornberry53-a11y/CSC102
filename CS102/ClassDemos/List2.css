@@ -1,0 +1,19 @@
+css
+/* Styling for the navigation list items */
+li {
+    background-color: black;
+    height: 200px;
+    width: 200px;
+    text-align: left;
+    border-color: aqua;
+    border-width: 25px;
+    border-style: double;
+}
+
+/* Styling for the links inside the navigation list */
+nav ul li a {
+    color: aliceblue;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: bold;
+}

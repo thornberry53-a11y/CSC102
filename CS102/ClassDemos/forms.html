@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- making sure this points to my js file so it works -->
+    <script src="forms.js"></script> 
+    <title>Forms 1</title>
+</head>
+<body>
+    <h1>Forms - login</h1>
+    <br>
+    <form id="credSubmit" onsubmit="return false">
+        First Name: <input type="text" id="fName" name="fName"><br><br>
+        Last Name: <input type="text" id="lName" name="lName"><br><br>
+        Employee Number: <input type="number" id="empNum" name="empNum"><br><br>
+        Password: <input type="password" id="PW" name="PW"><br><br>
+        <!-- this runs the checkCreds function when clicked -->
+        <input type="submit" value="Submit" onclick="checkCreds()">
+    </form>
+    <br>
+    <p id="status">Status of login:</p>
+</body>
+</html>
