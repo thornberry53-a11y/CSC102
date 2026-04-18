@@ -1,32 +1,40 @@
 <!-- Gary Thornberry -->
-<!DOCTYPE html> <!-- Declares this as an HTML5 document -->
-<html lang="en"> <!-- Root element of the page -->
+<!DOCTYPE html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8"> <!-- Sets character encoding -->
-    <title>Meme & Palindrome Project</title> <!-- Tab title -->
-    <link rel="stylesheet" href="edp.css"> <!-- Links external CSS file -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome & Movement</title>
+    <!-- Link to the external CSS for the radial gradient and button styles -->
+    <link rel="stylesheet" href="edp.css">
 </head>
 <body>
-    <h1>Meme Movement Controller</h1> <!-- Main page heading -->
 
-    <!-- Form for Meme Controls to satisfy 'use form' requirement -->
-    <form id="memeForm"> 
-        <button type="button" id="startBtn">Start Moving</button> <!-- Button to begin animation -->
-        <button type="button" id="stopBtn">Stop Moving</button> <!-- Button to halt animation -->
+   
+
+    <!-- Form used to handle user input. The onsubmit trigger is placed directly in the tag -->
+    <form id="palinForm" onsubmit="checkPalindrome(event)">
+        <!-- Submit button that starts the palindrome check logic -->
+        <button type="submit" id="submitBtn">Check Palindrome</button>
     </form>
 
-    <!-- Form for Palindrome input to satisfy 'submit for all input' requirement -->
-    <form id="palinForm">
-        <input type="text" id="palinInput" placeholder="Enter word..."> <!-- Input field for text -->
-        <button type="submit" id="submitBtn">Check Palindrome</button> <!-- Submit button for form -->
-    </form>
+    <!-- Container for movement control buttons -->
+    <div class="controls">
+        <!-- Start button calls handleStartClick directly using onclick -->
+        <button id="startBtn" onclick="handleStartClick()">Start Move</button>
+        <!-- Stop button calls handleStopClick directly using onclick -->
+        <button id="stopBtn" onclick="handleStopClick()">Stop Move</button>
+    </div>
 
-    <!-- Area where validation and results are shown using innerHTML -->
-    <div id="msgArea"></div> 
+    <!-- The meme image that will move across the screen -->
+    <!-- Ensure 'meme.jpg' is in the same folder as this file -->
+    <img id="memeImage" src="catchme.png" alt="Meme Image">
 
-    <!-- The meme image that will move around the screen -->
-    <img id="memeImage" src="catchme.png" alt="Meme Image"> 
+    <!-- Linking the external JavaScript file at the end of the body -->
+    <script src="edp.js"></script>
 
-    <script src="edp.js"></script> <!-- Links the JavaScript logic at the end of body -->
+     <!-- Area where the results of the palindrome check will be displayed -->
+    <div id="msgArea">Results will appear here</div>
+
 </body>
 </html>

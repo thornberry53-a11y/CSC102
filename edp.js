@@ -1,76 +1,98 @@
-// Gary Thornberry
-var intervalidID = 0; // Stores the interval timer ID
-var startTop = 350;   // Initial vertical coordinate
-var startLeft = 100;  // Initial horizontal coordinate
-var dleft = 7;        // Horizontal speed/direction
-var dtop = 7;         // Vertical speed/direction
+// Gary Thornberry 
 
-// Requirement: No inline JS in HTML and No addEventListeners (using DOM Level 0)
-window.onload = function() {
-    // This sets the image position IMMEDIATELY when the page opens
-    var imageMeme = document.getElementById("memeImage");
-    imageMeme.style.top = startTop + "px";
-    imageMeme.style.left = startLeft + "px";
-    
-    // Assigns function to the start button click event
-    document.getElementById("startBtn").onclick = handleStartClick;
-    // Assigns function to the stop button click event
-    document.getElementById("stopBtn").onclick = handleStopClick;
-    // Assigns function to the form submit event
-    document.getElementById("palinForm").onsubmit = checkPalindrome;
-};
+// Global variables for movement
+var intervalidID = 0; // Timer ID for the meme
+var startTop = 350;    // Initial vertical position
+var startLeft = 100;   // Initial horizontal position
+var dleft = 7;         // Horizontal speed
+var dtop = 7;          // Vertical speed
 
-// Logic for starting the movement
+// Function to start the meme movement
 function handleStartClick() {
-    document.getElementById("startBtn").disabled = true; // Disable start to prevent multiple timers
-    document.getElementById("stopBtn").disabled = false; // Enable stop button
-    if (intervalidID == 0) { // Only start if not already running
-        intervalidID = setInterval(moveIt, 50); // Set interval for 50ms
+    // Disable the start button to prevent stacking timers
+    document.getElementById("startBtn").disabled = true; 
+    // Enable the stop button
+    document.getElementById("stopBtn").disabled = false; 
+
+    // Only start if a timer isn't already running
+    if (intervalidID == 0) {
+        // Run the movement logic every 50ms
+        intervalidID = setInterval(moveIt, 50); 
     }
 }
 
-// Logic for moving the image
+// Logic for calculating the bouncing image movement
 function moveIt() {
-    var imageMeme = document.getElementById("memeImage"); // Get image element
-    imageMeme.style.top = startTop + "px"; // Update top position
-    imageMeme.style.left = startLeft + "px"; // Update left position
+    // Find the image element
+    var imageMeme = document.getElementById("memeImage"); 
+    
+    // Update the position on the screen
+    imageMeme.style.top = startTop + "px"; 
+    imageMeme.style.left = startLeft + "px"; 
 
-    // Reverse horizontal direction if hitting window edges
+    // Bounce horizontally if hitting window edges
     if ((startLeft + imageMeme.width >= window.innerWidth) || (startLeft <= 0)) {
-        dleft = -dleft;
+        dleft = -dleft; 
     }
-    // Reverse vertical direction if hitting window edges
+
+    // Bounce vertically if hitting window edges
     if ((startTop + imageMeme.height >= window.innerHeight) || (startTop <= 0)) {
-        dtop = -dtop;
+        dtop = -dtop; 
     }
-    startTop += dtop; // Increment top coordinate
-    startLeft += dleft; // Increment left coordinate
+
+    // Increment coordinates for the next frame
+    startTop += dtop; 
+    startLeft += dleft; 
 }
 
-// Logic for stopping the movement
+// Function to stop the movement
 function handleStopClick() {
-    document.getElementById("startBtn").disabled = false; // Enable start button
-    document.getElementById("stopBtn").disabled = true; // Disable stop button
-    clearInterval(intervalidID); // Clear the interval timer
-    intervalidID = 0; // Reset timer ID
+    // Turn the start button back on
+    document.getElementById("startBtn").disabled = false; 
+    // Turn the stop button off
+    document.getElementById("stopBtn").disabled = true; 
+    
+    // Stop the interval and reset the ID
+    clearInterval(intervalidID); 
+    intervalidID = 0; 
 }
 
-// Logic for palindrome validation
+// Palindrome check logic with recursive loop
 function checkPalindrome(event) {
-    event.preventDefault(); // Requirement: use form submit without page reload
-    var input = document.getElementById("palinInput").value; // Get text from input
-    var display = document.getElementById("msgArea"); // Reference the display area
+    // Stop the form from refreshing the page
+    if (event) event.preventDefault(); 
+    
+    // Target the div where the message will appear
+    var display = document.getElementById("msgArea"); 
 
-    // Requirement: use innerHTML for user validation (no alerts)
-    if (input.length === 0) {
-        display.innerHTML = "Please enter a word!"; // Error message if empty
-        return;
-    }
+    // Prompt the user for input
+    var input = prompt("Please enter a word or phrase to check:");
 
-    var reversed = input.split("").reverse().join(""); // Reverse the string
-    if (input.toLowerCase() === reversed.toLowerCase()) {
-        display.innerHTML = input + " is a palindrome!"; // Success message
+    // Exit if the user clicks Cancel
+    if (input === null) return;
+
+    // Requirement: Remove spaces and make lowercase
+    var cleanStr = input.replace(/\s+/g, "").toLowerCase();
+    
+    // Reverse the string for comparison
+    var reversedStr = cleanStr.split("").reverse().join("");
+
+    // Check if it's a palindrome and update the page via innerHTML
+    if (cleanStr === reversedStr && cleanStr.length > 0) {
+        display.innerHTML = "Success! <strong>" + input + "</strong> is a palindrome.";
     } else {
-        display.innerHTML = input + " is NOT a palindrome."; // Failure message
+        display.innerHTML = "<strong>" + input + "</strong> is NOT a palindrome. Try again!";
     }
+
+    // Pause briefly so the browser can actually show the innerHTML text 
+    // while the next confirmation box is open
+    setTimeout(function() {
+        // Requirement: Give the user the option of entering another word
+        var choice = confirm("Result updated! Check another word?");
+        
+        // If they click OK, the function calls itself (creating the loop)
+        if (choice) {
+            checkPalindrome(); 
+        }
+    }, 100); 
 }

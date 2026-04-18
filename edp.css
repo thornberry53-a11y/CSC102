@@ -1,34 +1,65 @@
 /* Gary Thornberry */
-body { 
-    background-image: radial-gradient(blue, red); /* Sets background color */
-    background-size: cover; /* Background covers whole screen */
-    background-repeat: no-repeat; /* Prevents background tiling */
-    background-attachment: fixed; /* Keeps background still during scroll */
-    overflow: hidden; /* Prevents scrollbars from appearing */
-    display: flex; /* Enables flexbox layout */
-    flex-direction: column; /* Stacks items vertically */
-    align-items: center; /* Centers items horizontally */
-    padding-top: 50px; /* Adds space at the top */
-} 
 
-/* Styles for result message area */
-#msgArea {
-    margin: 20px; /* Space around text */
-    font-weight: bold; /* Bold text */
-    color: white; /* Text color */
+/* Styles the main page layout */
+body {
+    /* Sets the background to a circular blue and red blend */
+    background-image: radial-gradient(blue, red); 
+    /* Ensures the background covers the full screen */
+    background-size: cover; 
+    /* Prevents the background from repeating */
+    background-repeat: no-repeat; 
+    /* Keeps the background from moving when scrolling */
+    background-attachment: fixed; 
+    /* Hides scrollbars to keep the UI clean */
+    overflow: hidden; 
+    /* Enables flexbox for centering elements */
+    display: flex; 
+    /* Stacks the elements vertically */
+    flex-direction: column; 
+    /* Aligns all items to the horizontal center */
+    align-items: center; 
+    /* Pushes everything down from the very top */
+    padding-top: 50px; 
 }
 
-/* Styles for all buttons */
-button { 
-    border: 12px solid black; /* Thick border */
-    padding: 15px 32px; /* Button sizing */
-    cursor: pointer; /* Change cursor on hover */
-} 
+/* Styles for the palindrome result message area */
+#msgArea {
+    /* Pushes the message box down the page as requested */
+    margin-bottom: 150px; 
+    /* Adds space between the message and the buttons */
+    margin-bottom: 20px; 
+    /* Makes the result text bold */
+    font-weight: bold; 
+    /* Sets text color to white for visibility */
+    color: white; 
+    /* Centers the text within its own box */
+    text-align: center;
+    /* Sets a standard font size */
+    font-size: 1.5rem;
+}
 
-/* Requirement: absolute position for movement */
-#memeImage { 
-    position: absolute; /* Allows coordinate-based movement */
-    width: 300px; /* Image size */
-    pointer-events: none; /* Allows clicking buttons through the image */
-    z-index: -1; /* Places image behind other elements */
+/* Styles for all buttons on the page */
+button {
+    /* Adds a thick black border around buttons */
+    border: 12px solid black; 
+    /* Adds internal spacing for a larger click area */
+    padding: 15px 32px; 
+    /* Changes the mouse to a hand icon on hover */
+    cursor: pointer; 
+    /* Adds space between individual buttons */
+    margin: 10px;
+    /* Sets font weight for button text */
+    font-weight: bold;
+}
+
+/* Logic for the moving meme image */
+#memeImage {
+    /* Required: Allows the JS to move the image via coordinates */
+    position: absolute; 
+    /* Sets the size of the moving image */
+    width: 300px; 
+    /* Prevents the image from blocking button clicks */
+    pointer-events: none; 
+    /* Ensures the image stays in front of the background */
+    z-index: -10; 
 }
