@@ -1,4 +1,4 @@
-// Gary Thornberry - UAT assignment for interactive web elements
+// Gary Thornberry 
 // These global variables manage the persistent state and placement of moving elements
 var intervalidID = 0; // Tracks the unique identifier for the movement timer
 var startTop = 350;    // Sets the baseline vertical start position in pixels
