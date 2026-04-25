@@ -1,98 +1,97 @@
-// Gary Thornberry 
+// Gary Thornberry - UAT assignment for interactive web elements
+// These global variables manage the persistent state and placement of moving elements
+var intervalidID = 0; // Tracks the unique identifier for the movement timer
+var startTop = 350;    // Sets the baseline vertical start position in pixels
+var startLeft = 100;   // Sets the baseline horizontal start position in pixels
+var dleft = 7;         // Defines the horizontal movement increment for each frame
+var dtop = 7;          // Defines the vertical movement increment for each frame
 
-// Global variables for movement
-var intervalidID = 0; // Timer ID for the meme
-var startTop = 350;    // Initial vertical position
-var startLeft = 100;   // Initial horizontal position
-var dleft = 7;         // Horizontal speed
-var dtop = 7;          // Vertical speed
-
-// Function to start the meme movement
+// This function initiates the image animation and updates button accessibility
 function handleStartClick() {
-    // Disable the start button to prevent stacking timers
-    document.getElementById("startBtn").disabled = true; 
-    // Enable the stop button
-    document.getElementById("stopBtn").disabled = false; 
-
-    // Only start if a timer isn't already running
+    // Disable the start button to prevent users from stacking multiple intervals
+    document.getElementById("startBtn").disabled = true;
+    // Enable the stop button so the user can terminate the movement
+    document.getElementById("stopBtn").disabled = false;
+    // Condition ensures a new timer only starts if one isn't already active
     if (intervalidID == 0) {
-        // Run the movement logic every 50ms
-        intervalidID = setInterval(moveIt, 50); 
+        // Establishes a recurring cycle that calls moveIt every 50 milliseconds
+        intervalidID = setInterval(moveIt, 50);
     }
 }
 
-// Logic for calculating the bouncing image movement
+// Manages the coordinate calculations and collision detection for the image
 function moveIt() {
-    // Find the image element
-    var imageMeme = document.getElementById("memeImage"); 
+    // References the specific image element by its unique identifier
+    var imageMeme = document.getElementById("memeImage");
+    // Dynamically updates the top position of the image in the DOM
+    imageMeme.style.top = startTop + "px";
+    // Dynamically updates the left position of the image in the DOM
+    imageMeme.style.left = startLeft + "px";
     
-    // Update the position on the screen
-    imageMeme.style.top = startTop + "px"; 
-    imageMeme.style.left = startLeft + "px"; 
-
-    // Bounce horizontally if hitting window edges
+    // Boundary check: Reverses horizontal direction if the image hits the viewport edges
     if ((startLeft + imageMeme.width >= window.innerWidth) || (startLeft <= 0)) {
-        dleft = -dleft; 
+        dleft = -dleft;
     }
-
-    // Bounce vertically if hitting window edges
+    // Boundary check: Reverses vertical direction if the image hits the viewport edges
     if ((startTop + imageMeme.height >= window.innerHeight) || (startTop <= 0)) {
-        dtop = -dtop; 
+        dtop = -dtop;
     }
-
-    // Increment coordinates for the next frame
-    startTop += dtop; 
-    startLeft += dleft; 
+    
+    // Increments the position variables based on the current direction and speed
+    startTop += dtop;
+    startLeft += dleft;
 }
 
-// Function to stop the movement
+// Halts the active animation and restores the original button availability
 function handleStopClick() {
-    // Turn the start button back on
-    document.getElementById("startBtn").disabled = false; 
-    // Turn the stop button off
-    document.getElementById("stopBtn").disabled = true; 
-    
-    // Stop the interval and reset the ID
-    clearInterval(intervalidID); 
-    intervalidID = 0; 
+    // Re-enables the start button for future use
+    document.getElementById("startBtn").disabled = false;
+    // Disables the stop button since the movement has ended
+    document.getElementById("stopBtn").disabled = true;
+    // Terminates the recurring execution of the moveIt function
+    clearInterval(intervalidID);
+    // Resets the interval tracker to its null state
+    intervalidID = 0;
 }
 
-// Palindrome check logic with recursive loop
+// Evaluates whether user input reads the same forward and backward
 function checkPalindrome(event) {
-    // Stop the form from refreshing the page
-    if (event) event.preventDefault(); 
+    // Prevents the standard form submission from refreshing the entire page
+    if (event) event.preventDefault();
+    // Identifies the area where results will be visually displayed to the user
+    var display = document.getElementById("msgArea");
+    // Captures the current text value from the input field
+    var input = document.getElementById("palInput").value;
+    // Validates that the input is not empty before proceeding
+    if (!input || input.trim() === "") return;
     
-    // Target the div where the message will appear
-    var display = document.getElementById("msgArea"); 
-
-    // Prompt the user for input
-    var input = prompt("Please enter a word or phrase to check:");
-
-    // Exit if the user clicks Cancel
-    if (input === null) return;
-
-    // Requirement: Remove spaces and make lowercase
+    // Normalizes the string by removing spaces and converting to lowercase for comparison
     var cleanStr = input.replace(/\s+/g, "").toLowerCase();
-    
-    // Reverse the string for comparison
+    // Creates a reversed version of the string using array transformation methods
     var reversedStr = cleanStr.split("").reverse().join("");
-
-    // Check if it's a palindrome and update the page via innerHTML
+    
+    // Core comparison to determine if the input qualifies as a palindrome
     if (cleanStr === reversedStr && cleanStr.length > 0) {
+        // Updates the UI with a positive feedback message
         display.innerHTML = "Success! <strong>" + input + "</strong> is a palindrome.";
+        // Creates a new Audio instance using a relative path to the sound file
+        var successSound = new Audio('../Audio/Ring of Fire.mp3');
+        // Triggers the playback of the success audio
+        successSound.play();
     } else {
+        // Updates the UI with failure feedback if the strings do not match
         display.innerHTML = "<strong>" + input + "</strong> is NOT a palindrome. Try again!";
     }
-
-    // Pause briefly so the browser can actually show the innerHTML text 
-    // while the next confirmation box is open
-    setTimeout(function() {
-        // Requirement: Give the user the option of entering another word
-        var choice = confirm("Result updated! Check another word?");
-        
-        // If they click OK, the function calls itself (creating the loop)
-        if (choice) {
-            checkPalindrome(); 
-        }
-    }, 100); 
+    // Resets the input field to an empty state for the next user attempt
+    document.getElementById("palInput").value = "";
 }
+
+// Master event registration that triggers once the document is fully loaded
+window.onload = function() {
+    // Links the animation start logic to the start button's click event
+    document.getElementById("startBtn").onclick = handleStartClick;
+    // Links the animation termination logic to the stop button's click event
+    document.getElementById("stopBtn").onclick = handleStopClick;
+    // Links the palindrome evaluation logic to the form's submission event
+    document.getElementById("palinForm").onsubmit = checkPalindrome;
+};

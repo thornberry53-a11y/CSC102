@@ -1,40 +1,26 @@
-<!-- Gary Thornberry -->
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palindrome & Movement</title>
-    <!-- Link to the external CSS for the radial gradient and button styles -->
-    <link rel="stylesheet" href="edp.css">
-</head>
-<body>
+<!-- Gary Thornberry --> 
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <title>Palindrome & Movement</title> 
+    <link rel="stylesheet" href="edp.css"> 
+</head> 
+<body> 
+    <!-- Added input field inside the form to replace prompt pop-ups -->
+    <form id="palinForm" onsubmit="checkPalindrome(event)"> 
+        <input type="text" id="palInput" placeholder="Enter word or phrase">
+        <button type="submit" id="submitBtn">Check Palindrome</button> 
+    </form> 
 
-   
+    <div class="controls"> 
+        <button id="startBtn" onclick="handleStartClick()">Start Move</button> 
+        <button id="stopBtn" onclick="handleStopClick()">Stop Move</button> 
+    </div> 
 
-    <!-- Form used to handle user input. The onsubmit trigger is placed directly in the tag -->
-    <form id="palinForm" onsubmit="checkPalindrome(event)">
-        <!-- Submit button that starts the palindrome check logic -->
-        <button type="submit" id="submitBtn">Check Palindrome</button>
-    </form>
-
-    <!-- Container for movement control buttons -->
-    <div class="controls">
-        <!-- Start button calls handleStartClick directly using onclick -->
-        <button id="startBtn" onclick="handleStartClick()">Start Move</button>
-        <!-- Stop button calls handleStopClick directly using onclick -->
-        <button id="stopBtn" onclick="handleStopClick()">Stop Move</button>
-    </div>
-
-    <!-- The meme image that will move across the screen -->
-    <!-- Ensure 'meme.jpg' is in the same folder as this file -->
-    <img id="memeImage" src="catchme.png" alt="Meme Image">
-
-    <!-- Linking the external JavaScript file at the end of the body -->
-    <script src="edp.js"></script>
-
-     <!-- Area where the results of the palindrome check will be displayed -->
-    <div id="msgArea">Results will appear here</div>
-
-</body>
+    <img id="memeImage" src="catchme.png" alt="Meme Image"> 
+    <script src="edp.js"></script> 
+    <div id="msgArea">Results will appear here</div> 
+</body> 
 </html>
