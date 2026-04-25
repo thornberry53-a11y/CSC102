@@ -1,4 +1,4 @@
-<!-- Gary Thornberry --> 
+<!-- Main Structure for Palindrome Checker and Image Animation --> 
 <!DOCTYPE html> 
 <html lang="en"> 
 <head> 
@@ -8,19 +8,23 @@
     <link rel="stylesheet" href="edp.css"> 
 </head> 
 <body> 
-    <!-- Added input field inside the form to replace prompt pop-ups -->
+    <!-- Form to capture user input and trigger the palindrome check function -->
     <form id="palinForm" onsubmit="checkPalindrome(event)"> 
         <input type="text" id="palInput" placeholder="Enter word or phrase">
         <button type="submit" id="submitBtn">Check Palindrome</button> 
     </form> 
 
+    <!-- UI buttons to control the movement of the meme image --> 
     <div class="controls"> 
         <button id="startBtn" onclick="handleStartClick()">Start Move</button> 
         <button id="stopBtn" onclick="handleStopClick()">Stop Move</button> 
     </div> 
 
+    <!-- The target image for animation and the script reference --> 
     <img id="memeImage" src="catchme.png" alt="Meme Image"> 
     <script src="edp.js"></script> 
+
+    <!-- Display area for palindrome validation messages --> 
     <div id="msgArea">Results will appear here</div> 
 </body> 
 </html>
