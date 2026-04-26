@@ -1,0 +1,59 @@
+<!-- Author: Gary Thornberry -->
+<!-- Course: CS102 -->
+<!-- Assignment: Monster Arena - The Final Stand -->
+
+<!-- Declares that this document uses the HTML5 standard -->
+<!DOCTYPE html>
+<!-- Opens the root HTML element and specifies English as the primary language -->
+<html lang="en">
+<!-- The head section stores page metadata and links to external resources -->
+<head>
+    <!-- Configures the browser to use UTF-8 character encoding for proper text display -->
+    <meta charset="UTF-8">
+    <!-- Defines the specific title that users will see on their browser tab -->
+    <title>Monster Arena: The Final Stand</title>
+    <!-- Connects the external CSS stylesheet to apply your custom game visuals -->
+    <link rel="stylesheet" href="MonsterArena.css">
+<!-- Ends the head section of the document -->
+</head>
+<!-- The body section holds every visual element that the player interacts with -->
+<body>
+    <!-- Displays the main title of the game at the top of the screen -->
+    <h1 id="main-title">Monster Arena</h1>
+    
+    <!-- A dedicated container for tracking the monster's vitality during the fight -->
+    <div id="hp-container">
+        <!-- A paragraph that labels the monster's life points for the player -->
+        <p>Monster Health: 
+            <!-- A span element with a unique ID so JavaScript can update the number live -->
+            <span id="hp-number">100</span>
+        </p>
+    </div>
+
+    <!-- The interactive form that captures player actions and prevents page refreshes -->
+    <form id="attack-form" onsubmit="playRound(event)">
+        <!-- Provides a clear instruction label for the hero name input field -->
+        <label for="hero-name">Hero Name:</label>
+        <!-- A required text box where the player enters their character's name -->
+        <input type="text" id="hero-name" placeholder="Enter your name" required>
+        <!-- Vertical spacing to separate the input box from the action button -->
+        <br><br>
+        <!-- The button that submits the form and triggers the playRound() function -->
+        <button type="submit">Execute Attack!</button>
+    </form>
+
+    <!-- A large display area used to log each individual turn of the battle -->
+    <div id="battle-log">
+        <!-- The starting message shown to the player before any buttons are clicked -->
+        <p>Enter your name and attack to begin!</p>
+    </div>
+
+    <!-- An extra div reserved for displaying status updates or secondary function results -->
+    <div id="status-update"></div>
+
+    <!-- Links the external JavaScript file which contains the math and game logic -->
+    <script src="MonsterArena.js"></script>
+<!-- Closes the body tag to end the visible content area -->
+</body>
+<!-- Marks the final end of the HTML document -->
+</html>

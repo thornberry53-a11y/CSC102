@@ -1,0 +1,59 @@
+/* Gary Thornberry */
+/* Course: CS102 */
+/* Assignment: Layout and Styling - Standard Desktop Version */
+
+/* Main body styling to set the overall look of the page */
+body {
+  /* Sets a soft grayish-blue background color using RGB values */
+  background-color: rgb(162, 162, 182); 
+  /* Sets the text color to a contrasting burnt orange/brown for readability */
+  color: rgb(197, 119, 11); 
+  /* Adds space at the bottom so content doesn't get hidden behind the fixed footer */
+  padding-bottom: 40px; 
+}
+
+/* Navigation section layout for site links */
+nav {
+  /* Ensures the navigation area takes up at least 60% of the screen height */
+  min-height: 60vh; 
+  /* Prevents the navigation area from growing beyond 90% of the screen height */
+  max-height: 90vh; 
+  /* Sets a fixed width for the navigation links or menu area */
+  width: 200px; 
+  /* Aligns the element toward the center of its container */
+  float: center; 
+  /* Adds internal spacing around the navigation content to prevent crowding */
+  padding: 5px; 
+  /* Increases the vertical space between lines of text for better menu clarity */
+  line-height: 30px; 
+}
+
+/* Footer styling to keep it locked at the very bottom of the browser */
+footer {
+  /* Fixes the footer position so it stays visible even while scrolling the page */
+  position: fixed; 
+  /* Aligns the footer to the very bottom edge of the browser window */
+  bottom: 0; 
+  /* Aligns the footer to the very left edge of the browser window */
+  left: 0; 
+  /* Stretches the footer across the entire width of the screen */
+  width: 100%; 
+  /* Uses a bright chartreuse green for the footer text to make it stand out */
+  color: chartreuse; 
+  /* Centers the text inside the footer horizontally for a balanced look */
+  text-align: center; 
+}
+
+/* Main content area formatting where the primary text and images live */
+main {
+  /* Creates space on the right side to prevent overlapping with side elements */
+  margin-right: 200px; 
+  /* Limits the width of the main text area to make reading lines of text easier */
+  width: 400px; 
+}
+
+/* Primary heading alignment for the top of the page */
+h1 {
+  /* Ensures the main page title is perfectly centered on the screen */
+  text-align: center; 
+}

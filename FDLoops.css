@@ -1,0 +1,41 @@
+/* this sets the heading text color and size */
+h1 {
+    color:red;
+    font-size: xx-large;
+    
+}
+/* this part changes the whole page background */
+body {
+    /* Sets the background */
+    background-image: url("image_491f788f.png");
+    /* This ensures the image covers the entire screen */
+    background-size: cover;
+    /* This keeps the background from moving when you scroll */
+    background-attachment: fixed;
+    /* This centers the image */
+    background-position: center;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    padding-top: 70px;
+}
+
+/* styling the first button by its id */
+#pop 
+{
+    background-color: rgb(244, 9, 9); 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+/* styling the other three buttons together */
+#replace, #reload, #new
+{
+    background-color: rgb(242, 7, 7);
+    color: rgb(18, 49, 206); 
+    padding: 10px; 
+    margin-left: 5px; 
+    border-radius: 5px; 
+}

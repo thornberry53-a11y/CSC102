@@ -1,0 +1,40 @@
+<!-- Gary Thornberry - CS102 Assignment 2.3 -->
+<!-- This page provides the user interface for the Palindrome Checker and site navigation -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Standard character set for web compatibility -->
+    <meta charset="UTF-8">
+    <!-- Viewport settings to ensure the page looks good on all screen sizes -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Creative Element: Linking the CSS file for custom colors and layout -->
+    <link rel="stylesheet" href="FDLoops.css">
+    <!-- Logic: Linking the external JavaScript file to keep HTML and logic separate -->
+    <script src="FDLoops.js" defer></script>
+    <title>JS Navigation & Palindrome Checker</title>
+</head>
+<body>
+    <!-- Main Heading for the Palindrome section -->
+    <h1>Word Analysis Tool</h1>
+
+    <!-- Using a standard Form container to gather user input for processing -->
+    <form id="palinForm">
+        <!-- Input for the word/phrase with a 'required' attribute to ensure data is entered -->
+        <input type="text" id="palInput" placeholder="Enter word or phrase" required>
+        <!-- Button that triggers the submission logic defined in the linked script -->
+        <button type="submit" id="submitBtn">Check Palindrome</button>
+    </form>
+
+    <!-- This empty div is targetted by JS to display validation and success/fail messages -->
+    <div id="msgArea"></div>
+
+    <!-- Container for site navigation controls -->
+    <div class="button-group">
+        <!-- These buttons have unique IDs to be linked to JS functions after the page loads -->
+        <button id="pop">Show Special Message</button>
+        <button id="replace">Go to Math Game</button>
+        <button id="reload">Refresh Current Page</button>
+        <button id="new">Enter Monster Arena</button>
+    </div>
+</body>
+</html>
