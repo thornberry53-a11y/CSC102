@@ -1,9 +1,9 @@
 /* this sets the heading text color and size */
 h1 {
     color:red;
-    font-size: xx-large;
-    
+    font-size: xx-large;   
 }
+
 /* this part changes the whole page background */
 body {
     /* Sets the background */
@@ -22,6 +22,8 @@ body {
     padding-top: 70px;
 }
 
+
+
 /* styling the first button by its id */
 #pop 
 {
@@ -38,4 +40,8 @@ body {
     padding: 10px; 
     margin-left: 5px; 
     border-radius: 5px; 
+}
+h3 img {
+    width: 250px;
+    height: auto;
 }
