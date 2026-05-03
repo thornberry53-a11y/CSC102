@@ -1,0 +1,55 @@
+<!-- 
+    Gary W. Thornberry
+    Equipment Maintenance Log
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Define the character encoding for the browser -->
+    <meta charset="UTF-8">
+    <!-- Ensure the page scales properly on mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- EXTERNAL CSS: Separates design from content for better maintainability -->
+    <link href="table.css" rel="stylesheet" type="text/css"/>
+    
+    <!-- EXTERNAL JS: 'defer' allows the HTML to load before the script runs -->
+    <script src="table.js" defer></script>
+    
+    <title>Equipment Log</title>
+</head>
+<body>
+
+    <!-- Main table for displaying equipment data -->
+    <table id="runLog">
+        <thead>
+            <!-- Table Header Row -->
+            <tr>
+                <th>Date</th>
+                <th>Usage Count</th>
+                <th>Equipment Type</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- 4 rows of initial data -->
+            <tr><td>2026-04-20</td><td>1</td><td>Manlift</td></tr>
+            <tr><td>2026-04-21</td><td>25</td><td>Forklift</td></tr>
+            <tr><td>2026-04-22</td><td>2</td><td>JLG</td></tr>
+            <tr><td>2026-04-23</td><td>3</td><td>Trucks</td></tr>
+        </tbody>
+    </table>
+
+    <!-- Form for adding new equipment entries dynamically -->
+    <form id="newRow">
+        <!-- Date input for log entry -->
+        Date: <input type="date" id="date" required/>
+        <!-- Number input for count -->
+        Number: <input type="number" id="number" required/>
+        <!-- Text input for equipment name -->
+        Type: <input type="text" id="type" required/>
+        <!-- Submit button to trigger the JavaScript Event Listener -->
+        <button id="rowBTN" type="submit">Add a new run</button>
+    </form>
+
+</body>
+</html>

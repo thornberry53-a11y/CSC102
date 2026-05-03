@@ -1,0 +1,77 @@
+/* 
+    Gary W. Thornberry
+    CSS for Equipment Log
+*/
+
+/* Targeting the body to set the overall page environment */
+body { 
+    /* Requirement: Professional background color (a muted seafoam green) */
+    background-color: #bbcdc7; 
+    /* Ensures content isn't touching the very edge of the browser window */
+    margin: 20px; 
+    /* Standard professional sans-serif font for readability */
+    font-family: Arial, sans-serif; 
+} 
+
+/* Styling the main data table structure */
+table { 
+    /* Using a thick border to create a framed appearance for the data */
+    border-style: solid;
+    border-width: 20px; 
+    /* Professional green border color as defined by RGB values */
+    border-color: rgb(89, 187, 89); 
+    /* Ensures the table fills most of the screen width for visibility */
+    width: 75%; 
+    /* Centers the table on the page */
+    margin: 0 center;
+    /* Combines borders for a cleaner, modern look */
+    border-collapse: collapse;
+} 
+
+/* Targeting the specific 'Date' header by its ID */
+#th1 { 
+    /* Ensures columns are balanced at 25% width each */
+    width: 25%; 
+    /* High contrast text color for the header */
+    color: rgb(43,226, 144); 
+    /* Distinctive background to separate the header from data rows */
+    background-color: blueviolet; 
+    padding: 10px;
+} 
+
+/* Targeting the 'Usage Count' header */
+#th2 { 
+    width: 25%; 
+    color: rgb(10, 22, 244); 
+    background-color: rgb(226,43,43); 
+    padding: 10px;
+} 
+
+/* Targeting the 'Equipment Type' header */
+#th3 { 
+    width: 25%; 
+    color: yellow; 
+    background-color:rgb(226,119,43) ; 
+    padding: 10px;
+} 
+
+
+/* This targets the 2nd, 4th, 6th rows etc. */
+tr:nth-child(even) { 
+    /* Using a bold pink background for even-numbered rows */
+    background-color: rgb(205, 27, 143); 
+    color: white; 
+} 
+
+/* This targets the 1st, 3rd, 5th rows etc. */
+tr:nth-child(odd) { 
+    /* Using a teal/blue background for odd-numbered rows */
+    background-color: rgb(97, 192, 187); 
+}
+
+/* Ensuring table data cells have proper spacing */
+td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.1);
+}
