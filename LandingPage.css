@@ -1,0 +1,151 @@
+/* Gary W. Thornberry - CS102 */
+/* Main page layout to keep everything centered and easy on the eyes */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f7f6; /* Light grey background to reduce eye strain */
+    color: #333;
+}
+/* Centering the main landing page content to align with the nav bar */
+main {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* Adding space around the logo and making sure it sits in the middle */
+main img {
+    display: block;
+    margin: 20px auto;
+}
+
+/* NAVIGATION (Landing Page Hub) */
+/* Flexbox setup for the main menu bar at the top */
+nav {
+    background-color: #2c3e50; /* Dark blue theme for a professional look */
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Making sure the links are readable and react when hovered over */
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    border-radius: 4px;
+    transition: background 0.3s;
+}
+
+nav a:hover {
+    background-color: #34495e; /* Slight color shift for better user feedback */
+}
+
+/* FORM STYLING */
+/* Giving the forms a white card look with a subtle shadow */
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    max-width: 400px;
+    margin: 0 auto 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+/* Making text inputs take up the full width of the form card */
+input[type="text"], input[type="url"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+/* Green submit button to indicate positive action */
+button[type="submit"] {
+    width: 100%;
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #219150;
+}
+
+/* TABLE STYLES */
+/* Clean table design for the equipment logs */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #2c3e50;
+    color: white;
+}
+
+/* Highlighting rows when the mouse passes over them */
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* MEME CONTAINER */
+/* Handling the text overlay for the meme generator tool */
+.meme-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+/* Applying that classic bold meme font style */
+.top-text, .bottom-text {
+    position: absolute;
+    width: 100%;
+    font-family: 'Impact', sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+}
+
+.top-text { top: 10px; }
+.bottom-text { bottom: 10px; }
+
+/* Feedback colors for validation success or errors */
+.success {
+    color: #27ae60;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.error {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-top: 10px;
+}
