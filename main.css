@@ -1,0 +1,37 @@
+body{
+    background-color: rgb(186, 186, 197);
+    color: rgb(204, 128, 21);
+    padding-bottom: 40px; /* Adjust this value to match or exceed the footer's height */
+}
+nav{
+    min-height: 60vh;
+    max-height: 90vh;
+    width: 200px;
+    float: left;
+    padding: 5px;
+    line-height: 30px;
+}
+footer{
+    position:fixed;
+    bottom:0;
+    left:0;
+    width:100%;
+    color:chartreuse;
+    text-align: center;
+}
+main{
+    margin-right: 200px;
+    width: 400px;
+}
+
+@media (max-width: 600px) {
+    #memeImage {
+        margin-right: 10px;
+        width: 100%;
+        max-width: 100%;
+    }
+}
+
+h1{
+    text-align: center;
+}

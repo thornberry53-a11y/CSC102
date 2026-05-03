@@ -23,7 +23,7 @@ function checkPalindrome(event) {
         // Updating the display area with a success message for the user
         display.innerHTML = "Success! <strong>" + input + "</strong> is a palindrome.";
         // Triggering a specific sound file when a palindrome is found
-        var successSound = new Audio('../Audio/Ring of Fire.mp3');
+        var successSound = new Audio("Ring of Fire.mp3");
         successSound.play();
     } else {
         // Providing clear feedback if the input does not meet palindrome criteria

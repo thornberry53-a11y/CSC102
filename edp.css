@@ -1,35 +1,72 @@
-body { 
-    background-size: cover; 
-    background-image: radial-gradient(blue, rgb(0, 229, 255)); 
-    background-repeat: no-repeat; 
+/* Gary Thornberry */
+
+body {
+
+    background-image: radial-gradient(blue, red);
+    background-size: cover;
     background-attachment: fixed;
-    overflow: hidden; /* Keeps meme from causing scrollbars */
-} 
-/*This is where i design the buttons*/
-button { 
-    border: 12px solid black; 
-    color: rgb(12, 2, 2); 
-    padding: 15px 32px; 
-    text-align: center; 
-    display: inline-block; 
-    font-size: 16px; 
-    cursor: pointer; 
-} 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding-top: 20px;
+    font-family: sans-serif;
+    overflow-x: hidden; 
+}
 
-#Button1 { background-color: rgb(9, 255, 0); } 
-#Button2 { background-color: blue; }
 
-/* Visual feedback for disabled buttons */
+#memeImage {
+    position: absolute;
+    width: 200px; 
+    left: 0px;
+    top: 400px;
+    z-index: -1;  
+}
+
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    overflow: hidden; 
+}
+
+
+#palinForm {
+    background: white;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    width: 350px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#msgArea {
+    color: white;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgb(17, 17, 238);
+    margin: 15px 0;
+}
+
+button {
+    padding: 10px 20px;
+    font-weight: bold;
+    cursor: pointer;
+    border: 2px solid black;
+    background: white;
+}
+
 button:disabled {
-    opacity: 0.4;
+    background: #ccc;
     cursor: not-allowed;
 }
 
-/* REQUIRED: Position absolute allows the image to move by coordinates */
-#memeImage {
-    position: absolute;
-    width: 300px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
+nav a {
+    color: white;
+    text-decoration: none;
+    background: rgba(0,0,0,0.5);
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
 }

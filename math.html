@@ -1,48 +1,32 @@
-<!DOCTYPE html>
 <!-- Author: Gary Thornberry -->
-<!-- Course: University of Advancing Technology -->
-<!-- Declares that this document is an HTML5 document -->
+<!DOCTYPE html>
 <html lang="en">
-<!-- The root element of the page, set to English -->
 <head>
-    <!-- Specifies the character encoding as UTF-8 for universal character support -->
     <meta charset="UTF-8">
-    <!-- Links the external CSS stylesheet to apply visual styles to the page elements -->
-    <link rel="stylesheet" href="style.css">
-    <!-- Connects the JavaScript logic file and uses 'defer' to load it after the HTML is parsed -->
+    <link rel="stylesheet" href="LandingPage.css">
     <script src="math.js" defer></script>
-    <!-- Sets the text that appears on the browser tab -->
     <title>Golf Ball Challenge</title>
 </head>
-<!-- Contains all visible content of the web page -->
 <body>
-    <!-- The main level-1 heading for the application -->
     <h1>Golf Ball Sum Challenge</h1>
-    <!-- A paragraph element providing clear instructions on how to win the game -->
     <p>Try to get a sum of 7 or 21 to win!</p>
-
-    <!-- Defines a form container to collect user data -->
+    
     <form>
-        <!-- Provides a text label specifically for the player name input field -->
         <label>Player Name:</label>
-        <!-- A text input field with a unique ID for JavaScript to capture the player's name -->
         <input type="text" id="playerName">
-        <!-- Line breaks used for simple vertical spacing between form elements -->
         <br><br>
-        <!-- A button that triggers the playGolf() function when clicked -->
         <button type="button" onclick="playGolf()">Play Golf</button>
     </form>
 
-    <!-- A standalone button that redirects the user back to the Palindrome tool -->
-    <button onclick="window.location.href='FDLoops.html'">Go Back to Palindrome Checker</button>
-    <!-- A line break to separate the navigation from the game status area -->
-    <br>
     
-    <!-- An empty paragraph that acts as a placeholder for displaying generated numbers -->
+    <button onclick="window.location.href='LandingPage.html'">Return to Hub</button>
+    
+    <br>
     <p id="golfballs">Golf balls will be displayed here</p>
-    <!-- A generic container for displaying whether the player won or lost -->
     <div id="result">Result will be displayed here</div>
-    <!-- A reserved div for showing a personalized greeting or additional game messages -->
     <div id="greetingArea"></div>
+
+    
+    <a href="LandingPage.html">Return to Hub</a>
 </body>
 </html>

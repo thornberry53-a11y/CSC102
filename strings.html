@@ -1,0 +1,43 @@
+<!-- Gary Thornberry -->
+<!DOCTYPE html>
+<!-- Opening the HTML tag to start the document -->
+<html lang="en">
+<!-- The head section contains the title and the styling -->
+<head>
+    <!-- The title that appears on the browser tab -->
+    <title>User Input Validation</title>
+    <link rel="stylesheet" href="../../LandingPage.css">
+    <!-- Starting the CSS internal stylesheet -->
+   
+<!-- Closing the head section -->
+</head>
+<!-- The body section contains the visible elements of the page -->
+<body>
+    <!-- The main heading for the page -->
+    <h1>Secret Message Portal</h1>
+
+    <!-- Using a form with a submit button as required -->
+    <!-- The "return validateForm()" catches the false signal to prevent refresh -->
+    <form id="userForm" onsubmit="return validateForm();">
+        <!-- Input area for the user's first name -->
+        <label>First Name: <input type="text" id="firstName" required></label>
+        <!-- Input area for the user's last name -->
+        <label>Last Name: <input type="text" id="lastName" required></label>
+        <!-- Input area for the user's zip code -->
+        <label>Zip Code: <input type="text" id="zipCode" required></label>
+        <!-- A submit button that triggers the form's onsubmit function -->
+        <input type="submit" value="Unlock Portal">
+    </form>
+
+    <!-- The empty div where your status and secret messages will appear -->
+    <div id="statusUpdate" style="margin-top: 20px; font-weight: bold;"></div>
+
+    <!-- Linking to your external JavaScript file -->
+    <script src="strings.js"></script>
+
+<a href="LandingPage.html">Return to Hub</a>
+
+<!-- Closing the body tag -->
+</body>
+<!-- Closing the html tag -->
+</html>

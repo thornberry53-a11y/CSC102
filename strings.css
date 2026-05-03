@@ -1,0 +1,45 @@
+/* Setting the background color to a soft cream using a hex code */
+body {
+    background-color: #30d0a8;
+    /* Centering all text on the page */
+    text-align: center;
+    /* Making the font simple and readable */
+    font-family: Arial, sans-serif;
+    /* Centering the content vertically */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+}
+
+/* Designing the form to look like a soft, rounded container */
+#userForm {
+    /* Making the form background white */
+    background-color: rgb(32, 227, 191);
+    /* Allowing the box to wrap around the content */
+    display: inline-block;
+    /* Adding space inside the box */
+    padding: 40px;
+    /* Rounding the corners for an organic feel */
+    border-radius: 25px;
+    /* Adding a thin, earth-toned border */
+    border: 2px solid sandybrown;
+    /* Adding a soft shadow for depth */
+    box-shadow: 5px 5px 15px #e5e5e5;
+}
+
+/* Styling labels to appear on their own lines */
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Styling the input text boxes */
+input {
+    margin-bottom: 20px;
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}

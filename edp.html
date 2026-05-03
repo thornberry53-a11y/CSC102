@@ -1,30 +1,26 @@
-<!-- Main Structure for Palindrome Checker and Image Animation --> 
-<!DOCTYPE html> 
-<html lang="en"> 
-<head> 
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Palindrome & Movement</title> 
-    <link rel="stylesheet" href="edp.css"> 
-</head> 
-<body> 
-    <!-- Form to capture user input and trigger the palindrome check function -->
-    <form id="palinForm" onsubmit="checkPalindrome(event)"> 
-        <input type="text" id="palInput" placeholder="Enter word or phrase">
-        <button type="submit" id="submitBtn">Check Palindrome</button> 
-    </form> 
-
-    <!-- UI buttons to control the movement of the meme image --> 
-    <div class="controls"> 
-        <button id="startBtn" onclick="handleStartClick()">Start Move</button> 
-        <button id="stopBtn" onclick="handleStopClick()">Stop Move</button> 
-    </div> 
-
-    <!-- The target image for animation and the script reference --> 
-    <img id="memeImage" src="catchme.png" alt="Meme Image"> 
-    <script src="edp.js"></script> 
-
-    <!-- Display area for palindrome validation messages --> 
-    <div id="msgArea">Results will appear here</div> 
-</body> 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindrome & Movement</title>
+    <link rel="stylesheet" href="LandingPage.css">
+</head>
+<body>
+    <a href="LandingPage.html">Return to Hub</a>
+    <main>
+        <form id="palinForm">
+            <label for="palInput">Palindrome Checker</label>
+            <input type="text" id="palInput" placeholder="Enter word or phrase" required>
+            <button type="submit" id="submitBtn">Check</button>
+        </form>
+        <div class="controls">
+            <button id="startBtn">Start Move</button>
+            <button id="stopBtn">Stop Move</button>
+        </div>
+        <div id="msgArea">Results will appear here</div>
+        <img id="memeImage" src="catchme.png" alt="Meme Image" style="position: absolute; left: 0px; width: 250px; top: 450px; z-index: -1;">
+    </main>
+    <script src="edp.js"></script>
+</body>
 </html>
